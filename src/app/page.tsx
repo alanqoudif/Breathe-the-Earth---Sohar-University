@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { GlobeCanvas } from "@/components/GlobeCanvas";
 import { AxisCard } from "@/components/AxisCard";
-import { IdeaForm } from "@/components/IdeaForm";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { SystemIcon } from "@/components/SystemIcon";
 import { axes, smartSystemPoints } from "@/data/axis";
@@ -11,14 +9,14 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="grid gap-10 rounded-[36px] border border-emerald-200 bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 p-8 text-white shadow-2xl shadow-emerald-200/60 lg:grid-cols-[1.05fr_0.95fr]"
+        className="grid gap-10 rounded-[36px] border border-emerald-100 bg-gradient-to-br from-[#0f4d3c] via-[#1d745c] to-[#4ba48d] p-8 text-white shadow-2xl shadow-emerald-200/40 lg:grid-cols-[1.05fr_0.95fr]"
       >
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.4em] text-white/80">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.4em] text-white/80">
             <span>جامعة صحار</span>
             <span className="text-white/60">Sohar University</span>
           </div>
-          <p className="text-sm text-emerald-100">
+          <p className="text-sm text-emerald-100/90">
             حلول فكرية من جامعة صحار لأزمتين توأمتين: المناخ والتنوع الحيوي.
           </p>
           <h1 className="text-4xl font-black leading-snug md:text-5xl">
@@ -32,7 +30,7 @@ export default function Home() {
             When my temperature rises, the colors of life disappear… can
             intelligence save me?
           </p>
-          <p className="text-lg text-emerald-50">
+          <p className="text-lg text-emerald-50/95">
             “تنفس الأرض – جامعة صحار” منصة فكرية تربط بين التكنولوجيا والبيئة،
             وتعرض نظامًا ذكيًا بأربع نقاط يعمل كجسر بين العلم والمناخ.
           </p>
@@ -57,15 +55,14 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="space-y-6">
+        <div className="flex items-center justify-center">
           <HeroIllustration />
-          <GlobeCanvas />
         </div>
       </section>
 
       <section
         id="idea"
-        className="rounded-3xl border border-emerald-100 bg-white p-8 text-slate-900 shadow-md shadow-emerald-100/70"
+        className="rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60"
       >
         <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
           الفكرة الأساسية
@@ -93,7 +90,7 @@ export default function Home() {
 
       <section
         id="system"
-        className="space-y-6 rounded-3xl border border-emerald-100 bg-white p-8 text-slate-900 shadow-md shadow-emerald-100/70"
+        className="space-y-6 rounded-3xl border border-emerald-50 bg-[#fcfffd] p-8 text-slate-900 shadow-md shadow-emerald-100/60"
       >
         <div className="flex flex-col gap-2">
           <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
@@ -103,7 +100,7 @@ export default function Home() {
             جدول يربط النقطة بالفكرة والهدف البيئي
           </h2>
         </div>
-        <div className="overflow-hidden rounded-3xl border border-emerald-100">
+        <div className="hidden overflow-hidden rounded-3xl border border-emerald-100 md:block">
           <table className="min-w-full border-collapse text-right text-sm text-slate-700">
             <thead className="bg-emerald-50 text-emerald-900">
               <tr>
@@ -150,6 +147,33 @@ export default function Home() {
             </tbody>
           </table>
         </div>
+        <div className="space-y-4 md:hidden">
+          {smartSystemPoints.map((row, index) => (
+            <div
+              key={row.point}
+              className="rounded-2xl border border-emerald-100 bg-white/90 p-5 shadow-sm shadow-emerald-100/40"
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div className="text-right">
+                  <p className="text-xs text-emerald-600">
+                    النقطة {index + 1}
+                  </p>
+                  <p className="text-lg font-semibold text-emerald-900">
+                    {row.point}
+                  </p>
+                </div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50">
+                  <SystemIcon variant={row.icon} />
+                </div>
+              </div>
+              <p className="mt-3 text-slate-700">{row.idea}</p>
+              <p className="mt-2 text-sm text-emerald-700">{row.goal}</p>
+              <p className="en-copy mt-3 text-left text-[11px] text-slate-500">
+                {row.pointEn} · {row.goalEn}
+              </p>
+            </div>
+          ))}
+        </div>
         <p className="en-copy text-left text-sm text-slate-500">
           Each pillar transforms intelligent sensing into predictive analysis,
           responsive action, and community collaboration.
@@ -158,7 +182,7 @@ export default function Home() {
 
       <section
         id="axes"
-        className="space-y-6 rounded-3xl border border-emerald-100 bg-white p-8 text-slate-900 shadow-md shadow-emerald-100/70"
+        className="space-y-6 rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60"
       >
         <div className="flex flex-col gap-2">
           <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
@@ -175,7 +199,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="space-y-6 rounded-3xl border border-emerald-100 bg-white p-8 text-slate-900 shadow-md shadow-emerald-100/70">
+      <section className="space-y-6 rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60">
         <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
           الأثر والرؤية المستقبلية
         </p>
@@ -197,34 +221,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
-
-      <section
-        id="participate"
-        className="grid gap-8 rounded-3xl border border-emerald-100 bg-gradient-to-br from-emerald-600/15 via-white to-emerald-50 p-8 lg:grid-cols-[1fr_1.1fr]"
-      >
-        <div className="space-y-4 text-slate-900">
-          <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
-            شاركنا رؤيتك
-          </p>
-          <h2 className="text-3xl font-semibold text-emerald-900">
-            قنوات المشاركة
-          </h2>
-          <p className="text-lg text-slate-700">
-            نموذج بسيط يستقبل أفكاركم البيئية الذكية مع الاسم والبريد والفكرة،
-            ليبقى الإنسان شريكًا في حماية الأرض.
-          </p>
-          <p className="en-copy text-left text-sm text-slate-600">
-            Submit your eco-intelligent proposal and join Sohar University’s
-            collaborative climate lab.
-          </p>
-          <ul className="space-y-3 text-sm text-slate-600">
-            <li>• مشاركة الفكرة عبر النموذج.</li>
-            <li>• تلقي تحديثات المجتمع البحثي.</li>
-            <li>• الدعوة للمشاركة في مشاريع جامعة صحار.</li>
-          </ul>
-        </div>
-        <IdeaForm />
       </section>
     </>
   );

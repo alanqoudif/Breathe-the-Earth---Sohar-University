@@ -8,7 +8,7 @@ type AxisPageContentProps = {
 export function AxisPageContent({ axis }: AxisPageContentProps) {
   return (
     <div className="space-y-12">
-      <section className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 text-white shadow-xl shadow-emerald-200/50">
+      <section className="relative overflow-hidden rounded-3xl border border-emerald-100 bg-gradient-to-br from-[#0f4d3c] via-[#1d745c] to-[#4ba48d] text-white shadow-xl shadow-emerald-200/40">
         <div
           aria-hidden
           className="absolute inset-0 opacity-30"
@@ -43,14 +43,14 @@ export function AxisPageContent({ axis }: AxisPageContentProps) {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-emerald-100 bg-white p-8 text-slate-900 shadow-md shadow-emerald-100/70">
+      <section className="rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60">
         <p className="text-lg text-slate-800">{axis.summaryAr}</p>
         <p className="en-copy mt-4 text-left text-sm text-slate-600">
           {axis.summaryEn}
         </p>
       </section>
 
-      <section className="grid gap-8 rounded-3xl border border-emerald-100 bg-white p-8 text-slate-900 lg:grid-cols-2">
+      <section className="grid gap-8 rounded-3xl border border-emerald-50 bg-white/90 p-8 text-slate-900 lg:grid-cols-2">
         <div className="space-y-4">
           <p className="text-sm font-semibold text-emerald-700">النص العربي</p>
           {axis.paragraphsAr.map((paragraph) => (
@@ -71,18 +71,12 @@ export function AxisPageContent({ axis }: AxisPageContentProps) {
         </div>
       </section>
 
-      <section className="flex flex-wrap gap-4 rounded-3xl border border-emerald-100 bg-emerald-50 p-6 text-emerald-900">
+      <section className="flex flex-wrap gap-4 rounded-3xl border border-emerald-50 bg-[#f0f9f4] p-6 text-emerald-900">
         <Link
           href="/"
           className="rounded-full border border-emerald-300 px-6 py-3 text-sm font-semibold text-emerald-900 transition hover:bg-white"
         >
           الرجوع للصفحة الرئيسية
-        </Link>
-        <Link
-          href="/#idea-form"
-          className="rounded-full bg-gradient-to-l from-[#1f8a5c] via-[#00a884] to-[#5eb6d7] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-200/70"
-        >
-          شارك رؤيتك
         </Link>
       </section>
     </div>
