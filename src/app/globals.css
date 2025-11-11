@@ -13,7 +13,7 @@ body {
   margin: 0;
   background-color: var(--surface-light);
   color: var(--text-primary);
-  font-family: var(--font-cairo), "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-tajawal), var(--font-cairo), "Tajawal", "Cairo", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 p {

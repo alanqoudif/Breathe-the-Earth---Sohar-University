@@ -88,7 +88,7 @@ export function HeroIllustration() {
           textAnchor="middle"
           fontSize="28"
           fill="#f0fff4"
-          fontFamily="Cairo, sans-serif"
+          fontFamily="Tajawal, Cairo, sans-serif"
         >
           تنفّس الأرض
         </text>

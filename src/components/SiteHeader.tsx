@@ -13,7 +13,6 @@ const overviewNav: NavItem[] = [
   { href: "/#idea", label: "الفكرة" },
   { href: "/#system", label: "النظام الذكي" },
   { href: "/#axes", label: "المحاور" },
-  { href: "/#participate", label: "شاركنا" },
 ];
 
 const axisNav: NavItem[] = [
@@ -53,12 +52,6 @@ export function SiteHeader() {
           </span>
         </Link>
         <div className="flex items-center gap-3">
-          <Link
-            href="/#participate"
-            className="hidden rounded-full bg-gradient-to-l from-[#1f8a5c] via-[#00a884] to-[#5eb6d7] px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-emerald-200/60 sm:inline-flex"
-          >
-            شارك فكرتك
-          </Link>
           <button
             type="button"
             onClick={handleToggle}
@@ -101,18 +94,53 @@ export function SiteHeader() {
         </div>
       </nav>
       {isOpen && (
-        <div className="border-t border-emerald-100 bg-white px-4 py-4 sm:hidden">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-wrap gap-2">{renderLinks(overviewNav)}</div>
-            <hr className="border-emerald-100" />
-            <div className="flex flex-wrap gap-2">{renderLinks(axisNav)}</div>
-            <Link
-              href="/#participate"
-              onClick={closeMenu}
-              className="w-full rounded-full bg-gradient-to-l from-[#1f8a5c] via-[#00a884] to-[#5eb6d7] px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-emerald-200/60"
-            >
-              شارك فكرتك
-            </Link>
+        <div className="border-t border-emerald-100 bg-transparent px-4 py-4 sm:hidden">
+          <div className="rounded-3xl border border-emerald-100 bg-white/90 p-4 shadow-lg shadow-emerald-100/70">
+            <div className="space-y-6">
+              <div>
+                <p className="text-xs font-semibold text-emerald-600">
+                  استكشاف المنصة
+                </p>
+                <div className="mt-2 grid gap-2">
+                  {overviewNav.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMenu}
+                      className="flex items-center justify-between rounded-2xl border border-emerald-50 bg-emerald-50/60 px-4 py-3 text-sm font-semibold text-emerald-900 shadow-sm shadow-emerald-100/40 transition hover:bg-white"
+                    >
+                      {item.label}
+                      <span aria-hidden className="text-xs text-emerald-500">
+                        ↗
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-xs font-semibold text-emerald-600">
+                  المحاور التفصيلية
+                </p>
+                <div className="mt-2 grid gap-2">
+                  {axisNav.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={closeMenu}
+                      className="flex items-center justify-between rounded-2xl border border-emerald-50 bg-white px-4 py-3 text-sm font-semibold text-emerald-900 shadow-sm shadow-emerald-100/40 transition hover:bg-emerald-50/70"
+                    >
+                      {item.label}
+                      <span
+                        aria-hidden
+                        className="text-xs text-emerald-500"
+                      >
+                        →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

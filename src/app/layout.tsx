@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cairo, Roboto } from "next/font/google";
+import { Cairo, Roboto, Tajawal } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -8,6 +8,12 @@ const cairo = Cairo({
   subsets: ["arabic", "latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-cairo",
+});
+
+const tajawal = Tajawal({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-tajawal",
 });
 
 const roboto = Roboto({
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body
-        className={`${cairo.variable} ${roboto.variable} bg-[var(--surface-light)] text-slate-900 antialiased`}
+        className={`${tajawal.variable} ${cairo.variable} ${roboto.variable} bg-[var(--surface-light)] text-slate-900 antialiased`}
       >
         <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(31,138,92,0.15),_transparent_50%),_radial-gradient(circle_at_bottom,_rgba(94,182,215,0.18),_transparent_40%)]">
           <SiteHeader />
