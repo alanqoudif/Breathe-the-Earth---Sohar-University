@@ -9,56 +9,76 @@ export default function Home() {
     <>
       <section
         id="hero"
-        className="grid gap-10 rounded-[36px] border border-emerald-100 bg-gradient-to-br from-[#0f4d3c] via-[#1d745c] to-[#4ba48d] p-8 text-white shadow-2xl shadow-emerald-200/40 lg:grid-cols-[1.05fr_0.95fr]"
+        className="relative grid gap-10 overflow-hidden rounded-[36px] border border-emerald-100 bg-white/70 p-6 text-emerald-900 shadow-xl shadow-emerald-100/80 sm:p-10 lg:grid-cols-[1.1fr_0.9fr]"
       >
-        <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs text-white/80">
-            <span className="font-semibold text-white">جامعة صحار</span>
-            <span className="uppercase tracking-[0.4em] text-white/60">
+        <div
+          className="pointer-events-none absolute inset-0 rounded-[36px] bg-gradient-to-br from-emerald-50 via-white to-teal-50"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -left-16 top-6 h-48 w-48 rounded-full bg-emerald-200/40 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-teal-200/30 blur-3xl"
+          aria-hidden="true"
+        />
+        <div className="relative z-10 space-y-6 lg:space-y-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-100 bg-white/80 px-4 py-1 text-xs text-emerald-600 shadow-sm">
+            <span className="font-semibold text-emerald-900">جامعة صحار</span>
+            <span className="uppercase tracking-[0.4em] text-emerald-500">
               Sohar University
             </span>
           </div>
-          <p className="text-sm text-emerald-100/90">
+          <p className="text-sm text-emerald-600/90">
             حلول فكرية من جامعة صحار لأزمتين توأمتين: المناخ والتنوع الحيوي.
           </p>
-          <h1 className="text-4xl font-black leading-snug md:text-5xl">
+          <h1 className="text-4xl font-black leading-snug text-emerald-950 md:text-5xl">
             حين ترتفع حرارتي، تختفي ألوان حياتي…
             <br />
-            <span className="text-transparent bg-gradient-to-l from-[#f6f9d5] to-[#92f2c5] bg-clip-text">
+            <span className="bg-gradient-to-l from-emerald-600 to-teal-400 bg-clip-text text-transparent">
               فهل يمكن أن ينقذني الذكاء؟
             </span>
           </h1>
-          <p className="en-copy text-left text-sm text-emerald-50">
+          <p className="en-copy text-left text-xs font-medium text-emerald-500">
             When my temperature rises, the colors of life disappear… can
             intelligence save me?
           </p>
-          <p className="text-lg text-emerald-50/95">
+          <p className="text-lg leading-8 text-slate-700">
             “تنفس الأرض – جامعة صحار” منصة فكرية تربط بين التكنولوجيا والبيئة،
             وتعرض نظامًا ذكيًا بأربع نقاط يعمل كجسر بين العلم والمناخ.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="/#system"
-              className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-emerald-900 shadow-lg shadow-emerald-200/80"
+              className="rounded-full bg-emerald-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-200/80 transition hover:bg-emerald-500"
             >
               استكشف النظام الذكي
             </Link>
             <Link
               href="/axis-1"
-              className="rounded-full border border-white/50 px-8 py-3 text-sm font-semibold text-white/90 transition hover:bg-white/10"
+              className="rounded-full border border-emerald-200 px-8 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50"
             >
               ابدأ بالمحور الأول
             </Link>
           </div>
-          <div className="rounded-3xl border border-white/30 bg-white/10 p-4 text-sm text-emerald-50">
+          <div className="flex items-center gap-2 text-sm text-emerald-700">
+            <span
+              className="h-2 w-2 rounded-full bg-emerald-400"
+              aria-hidden="true"
+            />
             <p>
               شعارنا: الذكاء الاصطناعي لا يراقب الطبيعة فقط، بل يتعلم منها ليعيد
               توازنها.
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center">
-          <HeroIllustration />
+        <div className="relative z-10 flex items-center justify-center">
+          <div className="w-full max-w-sm rounded-[32px] border border-emerald-100 bg-white/95 p-4 shadow-[0_35px_80px_rgba(16,185,129,0.18)]">
+            <div className="rounded-[28px] bg-gradient-to-b from-[#0f4d3c] via-[#1d745c] to-[#3f9f85] p-6">
+              <HeroIllustration />
+            </div>
+          </div>
         </div>
       </section>
 
