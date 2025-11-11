@@ -12,9 +12,11 @@ export default function Home() {
         className="grid gap-10 rounded-[36px] border border-emerald-100 bg-gradient-to-br from-[#0f4d3c] via-[#1d745c] to-[#4ba48d] p-8 text-white shadow-2xl shadow-emerald-200/40 lg:grid-cols-[1.05fr_0.95fr]"
       >
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs uppercase tracking-[0.4em] text-white/80">
-            <span>جامعة صحار</span>
-            <span className="text-white/60">Sohar University</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs text-white/80">
+            <span className="font-semibold text-white">جامعة صحار</span>
+            <span className="uppercase tracking-[0.4em] text-white/60">
+              Sohar University
+            </span>
           </div>
           <p className="text-sm text-emerald-100/90">
             حلول فكرية من جامعة صحار لأزمتين توأمتين: المناخ والتنوع الحيوي.
@@ -64,7 +66,7 @@ export default function Home() {
         id="idea"
         className="rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60"
       >
-        <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
+        <p className="text-sm font-semibold text-emerald-600">
           الفكرة الأساسية
         </p>
         <h2 className="mt-3 text-3xl font-semibold text-emerald-900">
@@ -93,7 +95,7 @@ export default function Home() {
         className="space-y-6 rounded-3xl border border-emerald-50 bg-[#fcfffd] p-8 text-slate-900 shadow-md shadow-emerald-100/60"
       >
         <div className="flex flex-col gap-2">
-          <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
+          <p className="text-sm font-semibold text-emerald-600">
             النظام الذكي من أربع نقاط
           </p>
           <h2 className="text-3xl font-semibold text-emerald-900">
@@ -185,7 +187,7 @@ export default function Home() {
         className="space-y-6 rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60"
       >
         <div className="flex flex-col gap-2">
-          <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
+          <p className="text-sm font-semibold text-emerald-600">
             المحاور الأربعة
           </p>
           <h2 className="text-3xl font-semibold text-emerald-900">
@@ -200,7 +202,7 @@ export default function Home() {
       </section>
 
       <section className="space-y-6 rounded-3xl border border-emerald-50 bg-[#f9fdf9] p-8 text-slate-900 shadow-md shadow-emerald-100/60">
-        <p className="text-sm uppercase tracking-[0.4em] text-emerald-600">
+        <p className="text-sm font-semibold text-emerald-600">
           الأثر والرؤية المستقبلية
         </p>
         <h2 className="text-3xl font-semibold text-emerald-900">
